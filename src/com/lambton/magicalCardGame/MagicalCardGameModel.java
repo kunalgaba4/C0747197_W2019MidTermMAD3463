@@ -1,12 +1,12 @@
 package com.lambton.magicalCardGame;
 
 public class MagicalCardGameModel {
-    String firstShuffleColPos;
-    String secShuffleColPos;
-    String [][]cardList=null;
-    String [][]firstShuffle=null;
-    String [][]secShuffle=null;
-    String guessedCard;
+    private String firstShuffleColPos;
+    private String secShuffleColPos;
+    private String[][] cardList = null;
+    private String[][] firstShuffle = null;
+    private String[][] secShuffle = null;
+    private String guessedCard;
 
     public String getFirstShuffleColPos() {
         return firstShuffleColPos;
