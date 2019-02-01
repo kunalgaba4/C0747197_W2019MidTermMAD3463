@@ -4,10 +4,18 @@ import java.util.Scanner;
 
 public class MagicMain {
 
+    private static String[][] cardList;
+    private static Scanner sc;
+
     public static void main(String args[]){
         MagicalCardGameModel magicalCardGameModel= new MagicalCardGameModel();
         MagicalCardGameCalculator magicalCardGameCalculator= new MagicalCardGameCalculator();
-        String[][] cardList={{ "1", "A", "5" }, { "2", "7", "3" }, { "3", "6", "K" }};
+
+//        String[][] cardList={{ "1", "A", "5" }, { "2", "7", "3" }, { "3", "6", "K" }};
+        cardList = new String[3][3];
+        sc = new Scanner(System.in);
+        System.out.println("Enter the 3*3 matrix values");
+        enterMatrixData(sc, cardList);
         magicalCardGameModel.setCardList(cardList);
         displayMatrix(magicalCardGameModel.getCardList());
 
@@ -31,6 +39,14 @@ public class MagicMain {
 
 
 
+    }
+
+    public static void enterMatrixData(Scanner scan, String[][] matrix){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = scan.nextLine();
+            }
+        }
     }
 
     private static void column1(String[][] cardList) {

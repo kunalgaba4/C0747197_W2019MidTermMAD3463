@@ -41,7 +41,7 @@ public class MagicalCardGameCalculator implements MagicalCardGameInterface {
         return transpose;
     }
     private  String[][] interchangeRows(String[][] transpose, int x, int y) {
-        //x for 1 y for 2
+        //x for Row number  y for row with wich u want to interchange
         String temp;
         String[][] tranposedMatrix= transpose;
         for(int i = 0; i < 3; i++)
