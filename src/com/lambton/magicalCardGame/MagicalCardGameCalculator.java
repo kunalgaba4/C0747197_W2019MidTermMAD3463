@@ -18,7 +18,7 @@ public class MagicalCardGameCalculator implements MagicalCardGameInterface {
         String[][] finalMatrix = tranposeMatrix(magicalCardGameModel.getFirstShuffle());
         if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("c1")) {
             finalMatrix = interchangeRows(finalMatrix, 1, 2);
-        } else if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("c13")) {
+        } else if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("c3")) {
             finalMatrix = interchangeRows(finalMatrix, 1, 2);
             finalMatrix = interchangeRows(finalMatrix, 2, 3);
         }

@@ -20,13 +20,27 @@ public class MagicMain {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the column which contains your card");
-        String columnNumber=sc.nextLine();
+        String columnNumber = sc.nextLine();
+        if ((columnNumber.equalsIgnoreCase("c1"))
+                || (columnNumber.equalsIgnoreCase("c2"))
+                || (columnNumber.equalsIgnoreCase("c3"))) {
+
+        } else {
+            throw new IllegalArgumentException("You can only enter columns like c1, c2, c3");
+        }
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
         magicalCardGameModel.setFirstShuffle(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getFirstShuffle());
 
         System.out.println("Enter the column which contains your card");
         columnNumber = sc.nextLine();
+        if ((columnNumber.equalsIgnoreCase("c1"))
+                || (columnNumber.equalsIgnoreCase("c2"))
+                || (columnNumber.equalsIgnoreCase("c3"))) {
+
+        } else {
+            throw new IllegalArgumentException("You can only enter columns like c1, c2, c3");
+        }
         magicalCardGameModel.setSecShuffleColPos(columnNumber);
         magicalCardGameModel.setSecShuffle(magicalCardGameCalculator.getSecShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getSecShuffle());
