@@ -17,12 +17,12 @@ public class MagicalCardGameCalculator implements MagicalCardGameInterface {
 
     @Override
     public String[][] getSecShuffleResult(MagicalCardGameModel magicalCardGameModel) {
-        String[][] finalMatrix = tranposeMatrix(magicalCardGameModel.getCardList());
-        if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("1")){
+        String[][] finalMatrix = tranposeMatrix(magicalCardGameModel.getFirstShuffle());
+        if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("1")){
             finalMatrix=interchangeRows(finalMatrix,1,2);
-        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("2")){
+        }else if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("2")){
             finalMatrix=interchangeRows(finalMatrix,1,2);
-        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("3")){
+        }else if (magicalCardGameModel.getSecShuffleColPos().equalsIgnoreCase("3")){
             finalMatrix=interchangeRows(finalMatrix,1,2);
             finalMatrix=interchangeRows(finalMatrix,2,3);
         }
