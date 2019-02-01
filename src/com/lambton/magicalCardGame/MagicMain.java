@@ -6,12 +6,15 @@ public class MagicMain {
 
     public static void main(String args[]){
         MagicalCardGameModel magicalCardGameModel= new MagicalCardGameModel();
+        MagicalCardGameCalculator magicalCardGameCalculator= new MagicalCardGameCalculator();
         String[][] cardList={{ "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" }};
         magicalCardGameModel.setCardList(cardList);
         displayMatrix(magicalCardGameModel.getCardList());
         Scanner sc= new Scanner(System.in);
-        System.out.println("Enter the column which contains your card");
+        System.out.println("Enter the column Number which contains your card");
         magicalCardGameModel.setFirstShuffleColPos(sc.next());
+
+        magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel);
 
         column1(magicalCardGameModel.getCardList());
 
@@ -24,8 +27,8 @@ public class MagicMain {
                 transpose[i][j] = cardList[j][i];
             }
         }
-        interchangeColumns(transpose);
         displayMatrix(transpose);
+        interchangeColumns(transpose);
     }
 
     private static void interchangeColumns(String[][] transpose) {
@@ -37,9 +40,9 @@ public class MagicMain {
         String[][] tranposedMatrix= transpose;
         for(int i = 0; i < 3; i++)
         {
-            temp = tranposedMatrix[i][(x-1)];
-            tranposedMatrix[i][x-1] = transpose[i][(y-1)];
-            tranposedMatrix[i][y-1] = temp;
+            temp = tranposedMatrix[(x-1)][i];
+            tranposedMatrix[x-1][i] = tranposedMatrix[y-1][i];
+            tranposedMatrix[y-1][i] = temp;
         }
         displayMatrix(tranposedMatrix);
     }
