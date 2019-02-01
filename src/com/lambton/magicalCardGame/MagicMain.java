@@ -15,10 +15,8 @@ public class MagicMain {
         int num = sc.nextInt();
         String columnNumber= String.valueOf(num);
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
-
-//        magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel);
         displayMatrix(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
-//        column1(magicalCardGameModel.getCardList());
+        System.out.println("Enter the column Number which contains your card");
 
     }
 

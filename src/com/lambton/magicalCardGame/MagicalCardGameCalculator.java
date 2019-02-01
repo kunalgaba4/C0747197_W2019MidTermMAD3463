@@ -3,17 +3,30 @@ package com.lambton.magicalCardGame;
 public class MagicalCardGameCalculator implements MagicalCardGameInterface {
     @Override
     public String[][] getFirstShuffleResult(MagicalCardGameModel magicalCardGameModel) {
-        String[][] finalMatrix = new String[0][];
+        String[][] finalMatrix = tranposeMatrix(magicalCardGameModel.getCardList());
         if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("1")){
-            tranposeMatrix(magicalCardGameModel.getCardList());
-            finalMatrix=interchangeRows(tranposeMatrix(magicalCardGameModel.getCardList()),1,2);
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("2")){
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("3")){
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+            finalMatrix=interchangeRows(finalMatrix,2,3);
         }
         return finalMatrix;
     }
 
     @Override
     public String[][] getSecShuffleResult(MagicalCardGameModel magicalCardGameModel) {
-        return new String[0][];
+        String[][] finalMatrix = tranposeMatrix(magicalCardGameModel.getCardList());
+        if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("1")){
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("2")){
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+        }else if (magicalCardGameModel.getFirstShuffleColPos().equalsIgnoreCase("3")){
+            finalMatrix=interchangeRows(finalMatrix,1,2);
+            finalMatrix=interchangeRows(finalMatrix,2,3);
+        }
+        return finalMatrix;
     }
 
     @Override
