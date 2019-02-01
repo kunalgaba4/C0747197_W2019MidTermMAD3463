@@ -12,11 +12,13 @@ public class MagicMain {
         displayMatrix(magicalCardGameModel.getCardList());
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the column Number which contains your card");
-        magicalCardGameModel.setFirstShuffleColPos(sc.next());
+        int num = sc.nextInt();
+        String columnNumber= String.valueOf(num);
+        magicalCardGameModel.setFirstShuffleColPos(columnNumber);
 
-        magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel);
-
-        column1(magicalCardGameModel.getCardList());
+//        magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel);
+        displayMatrix(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
+//        column1(magicalCardGameModel.getCardList());
 
     }
 
