@@ -11,7 +11,6 @@ public class MagicMain {
         MagicalCardGameModel magicalCardGameModel = new MagicalCardGameModel();
         MagicalCardGameCalculator magicalCardGameCalculator = new MagicalCardGameCalculator();
 
-//        String[][] cardList={{ "1", "A", "5" }, { "2", "7", "3" }, { "3", "6", "K" }};
         cardList = new String[3][3];
         sc = new Scanner(System.in);
         System.out.println("Enter the 3*3 matrix values");
@@ -20,22 +19,14 @@ public class MagicMain {
         displayMatrix(magicalCardGameModel.getCardList());
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the column Number which contains your card");
-        int num = sc.nextInt();
-        if (num > 3) {
-            throw new IllegalArgumentException("Column number can only be 1,2 or 3");
-        }
-        String columnNumber = String.valueOf(num);
+        System.out.println("Enter the column which contains your card");
+        String columnNumber=sc.nextLine();
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
         magicalCardGameModel.setFirstShuffle(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getFirstShuffle());
 
-        System.out.println("Enter the column Number which contains your card");
-        num = sc.nextInt();
-        if (num > 3) {
-            throw new IllegalArgumentException("Column number can only be 1,2 or 3");
-        }
-        columnNumber = String.valueOf(num);
+        System.out.println("Enter the column which contains your card");
+        columnNumber = sc.nextLine();
         magicalCardGameModel.setSecShuffleColPos(columnNumber);
         magicalCardGameModel.setSecShuffle(magicalCardGameCalculator.getSecShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getSecShuffle());
