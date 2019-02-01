@@ -7,7 +7,7 @@ public class MagicMain {
     public static void main(String args[]){
         MagicalCardGameModel magicalCardGameModel= new MagicalCardGameModel();
         MagicalCardGameCalculator magicalCardGameCalculator= new MagicalCardGameCalculator();
-        String[][] cardList={{ "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" }};
+        String[][] cardList={{ "1", "A", "5" }, { "2", "7", "3" }, { "3", "6", "K" }};
         magicalCardGameModel.setCardList(cardList);
         displayMatrix(magicalCardGameModel.getCardList());
 
@@ -27,7 +27,7 @@ public class MagicMain {
         displayMatrix(magicalCardGameModel.getSecShuffle());
 
         magicalCardGameModel.setGuessedCard(magicalCardGameCalculator.getFinalResult(magicalCardGameModel));
-        System.out.println(magicalCardGameModel.getGuessedCard());
+        System.out.println("Your Gueesed Card is: "+magicalCardGameModel.getGuessedCard());
 
 
 
