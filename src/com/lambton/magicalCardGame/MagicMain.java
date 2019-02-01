@@ -22,6 +22,9 @@ public class MagicMain {
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the column Number which contains your card");
         int num = sc.nextInt();
+        if (num>3){
+            throw  new IllegalArgumentException("Column number can only be 1,2 or 3");
+        }
         String columnNumber= String.valueOf(num);
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
         magicalCardGameModel.setFirstShuffle(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
