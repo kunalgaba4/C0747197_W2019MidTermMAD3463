@@ -17,7 +17,7 @@ public class MagicMain {
         enterMatrixData(sc, cardList);
         magicalCardGameModel.setCardList(cardList);
         displayMatrix(magicalCardGameModel.getCardList());
-
+        /*Get the details about first card*/
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the column which contains your card");
         String columnNumber = sc.nextLine();
@@ -31,7 +31,7 @@ public class MagicMain {
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
         magicalCardGameModel.setFirstShuffle(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getFirstShuffle());
-
+        /*Get the details about the second card*/
         System.out.println("Enter the column which contains your card");
         columnNumber = sc.nextLine();
         if ((columnNumber.equalsIgnoreCase("c1"))
@@ -45,6 +45,7 @@ public class MagicMain {
         magicalCardGameModel.setSecShuffle(magicalCardGameCalculator.getSecShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getSecShuffle());
 
+        /*TO get the output*/
         magicalCardGameModel.setGuessedCard(magicalCardGameCalculator.getFinalResult(magicalCardGameModel));
         System.out.println("Your Gueesed Card is: " + magicalCardGameModel.getGuessedCard());
 
