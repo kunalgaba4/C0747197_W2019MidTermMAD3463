@@ -31,7 +31,8 @@ public class MagicalCardGameCalculator implements MagicalCardGameInterface {
 
     @Override
     public String getFinalResult(MagicalCardGameModel magicalCardGameModel) {
-        return null;
+        String[][] finalMatrix=magicalCardGameModel.getSecShuffle();
+        return finalMatrix[1][1];
     }
 
     private String[][] tranposeMatrix(String[][] cardList) {
@@ -44,7 +45,6 @@ public class MagicalCardGameCalculator implements MagicalCardGameInterface {
         return transpose;
     }
     private  String[][] interchangeRows(String[][] transpose, int x, int y) {
-
         //x for 1 y for 2
         String temp;
         String[][] tranposedMatrix= transpose;

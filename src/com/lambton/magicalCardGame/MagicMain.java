@@ -10,6 +10,7 @@ public class MagicMain {
         String[][] cardList={{ "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" }};
         magicalCardGameModel.setCardList(cardList);
         displayMatrix(magicalCardGameModel.getCardList());
+
         Scanner sc= new Scanner(System.in);
         System.out.println("Enter the column Number which contains your card");
         int num = sc.nextInt();
@@ -17,13 +18,17 @@ public class MagicMain {
         magicalCardGameModel.setFirstShuffleColPos(columnNumber);
         magicalCardGameModel.setFirstShuffle(magicalCardGameCalculator.getFirstShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getFirstShuffle());
+
         System.out.println("Enter the column Number which contains your card");
         num = sc.nextInt();
         columnNumber= String.valueOf(num);
         magicalCardGameModel.setSecShuffleColPos(columnNumber);
         magicalCardGameModel.setSecShuffle(magicalCardGameCalculator.getSecShuffleResult(magicalCardGameModel));
         displayMatrix(magicalCardGameModel.getSecShuffle());
-        
+
+        magicalCardGameModel.setGuessedCard(magicalCardGameCalculator.getFinalResult(magicalCardGameModel));
+        System.out.println(magicalCardGameModel.getGuessedCard());
+
 
 
     }
